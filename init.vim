@@ -108,6 +108,9 @@ let g:gitgutter_sign_removed            = '▄'
 let g:gitgutter_sign_removed_first_line = '▀'
 let g:gitgutter_sign_modified_removed   = '▀'
 
+" Markdown preview
+Plug 'iamcco/markdown-preview.vim'
+
 " Markdown builder (NOTE: removed because it wasn't fucking working)
 " let g:markdown_compower_browser = 'open -a Firefox'
 " let g:markdown_compower_browser = '/mnt/c/Program Files/Mozilla Firefox/firefox.exe'
@@ -141,8 +144,11 @@ nmap <silent> <leader>ak <Plug>(ale_previous_wrap)
 " https://github.com/ap/vim-buftabline
 " https://github.com/zefei/vim-wintabs
 " https://github.com/scrooloose/nerdtree
+"
 " https://github.com/iamcco/markdown-preview.vim
 " https://github.com/JamshedVesuna/vim-markdown-preview
+" https://github.com/miyakogi/livemark.vim
+"
 " https://stackoverflow.com/questions/102384/using-vims-tabs-like-buffers
 " https://stackoverflow.com/questions/26708822/why-do-vim-experts-prefer-buffers-over-tabs
 
