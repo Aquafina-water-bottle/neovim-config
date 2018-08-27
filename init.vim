@@ -43,13 +43,23 @@ command Bd bp|bd #
 " Note that this only sets the colorcolumn for python files
 " autocmd FileType python setlocal colorcolumn=82
 
-" Sets all .fena files to use the config syntax highlighting
-au BufRead,BufNewFile *.fena setfiletype conf
-
 " sets a specific highlight color as dark yellow
 syntax on
 set hlsearch
 hi Search ctermbg=3
+
+" sets the folding colors to not kill my eyes per fold
+hi Folded ctermbg=0
+hi Folded ctermfg=15
+
+
+" Sets all .fena files to use the config syntax highlighting
+au BufRead,BufNewFile *.fena setfiletype conf
+
+" specifically a folding method for the 'Random.txt' file
+autocmd BufRead,BufNewFile ~/pgc/prog/Other/notes/Random.txt set foldmethod=marker foldmarker=//<,//>
+autocmd BufRead,BufNewFile /mnt/c/Users/Austin\-zs/Documents/Austin/powder\ game\ code/Programming/Other/notes/Random.txt set foldmethod=marker foldmarker=//<,//>
+
 
 " using vim-plug
 " installed using :PlugInstall
@@ -109,24 +119,9 @@ let g:gitgutter_sign_removed_first_line = '▀'
 let g:gitgutter_sign_modified_removed   = '▀'
 
 " Markdown preview
+" Note that this does NOT work using linux subsystem for windows
+" although it works in ubuntu 18.04
 Plug 'iamcco/markdown-preview.vim'
-
-" Markdown builder (NOTE: removed because it wasn't fucking working)
-" let g:markdown_compower_browser = 'open -a Firefox'
-" let g:markdown_compower_browser = '/mnt/c/Program Files/Mozilla Firefox/firefox.exe'
-
-" Plug 'euclio/vim-markdown-composer'
-" function! BuildComposer(info)
-"     if a:info.status != 'unchanged' || a:info.force
-"         if has('nvim')
-"             !cargo build --release
-"         else
-"             !cargo build --release --no-default-features --features json-rpc
-"         endif
-"     endif
-" endfunction
-
-" Plug 'euclio/vim-markdown-composer', { 'do': function('BuildComposer') }
 
 " Initialize plugin system
 call plug#end()
@@ -138,6 +133,11 @@ call plug#end()
 nmap <silent> <leader>aj <Plug>(ale_next_wrap)
 nmap <silent> <leader>ak <Plug>(ale_previous_wrap)
 
+" Markdown preview bindings
+nmap <silent> <F8> <Plug>MarkdownPreview
+imap <silent> <F8> <Plug>MarkdownPreview
+nmap <silent> <F9> <Plug>StopMarkdownPreview
+imap <silent> <F9> <Plug>StopMarkdownPreview
 
 
 " look into:
