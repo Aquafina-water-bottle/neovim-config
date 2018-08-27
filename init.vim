@@ -49,8 +49,8 @@ set hlsearch
 hi Search ctermbg=3
 
 " sets the folding colors to not kill my eyes per fold
-hi Folded ctermbg=0
-hi Folded ctermfg=15
+hi Folded ctermbg=236
+hi Folded ctermfg=252
 
 
 " Sets all .fena files to use the config syntax highlighting
