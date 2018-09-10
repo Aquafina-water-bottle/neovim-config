@@ -33,6 +33,9 @@ set autoread
 " allows one line above/below the cursor when scrolling down a file
 set scrolloff=1
 
+" uses the system clipboard
+set clipboard^=unnamed,unnamedplus
+
 " Sets this to delete the current buffer WITHOUT deleting the window
 " this is useful when working with multiple tabs since tabs are a collection
 " of windows
