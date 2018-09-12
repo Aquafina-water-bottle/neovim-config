@@ -159,5 +159,10 @@ imap <silent> <F9> <Plug>StopMarkdownPreview
 " https://stackoverflow.com/questions/102384/using-vims-tabs-like-buffers
 " https://stackoverflow.com/questions/26708822/why-do-vim-experts-prefer-buffers-over-tabs
 
+" temp macros for kaizo trap lmao
+" zero
+" let @1 = 'A7a 65 72 6f 20 '
+" one
+" let @2 = 'A6f 6e 65 20 '
 
 
