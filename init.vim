@@ -5,9 +5,9 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 
-" here because vim 7's default is nosmartindent
+" here because vim 7's default is noautoindent
 " otherwise, this isn't really needed for neovim lol
-set smartindent
+set autoindent
 
 " show line numbers
 " https://stackoverflow.com/a/10274166
