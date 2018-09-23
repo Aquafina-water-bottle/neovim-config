@@ -43,8 +43,10 @@ set clipboard^=unnamed,unnamedplus
 command Bd bp|bd #
 
 " Sets the line ruler to 80 for better veritcal split viewing
-" Note that this only sets the colorcolumn for python files
-" autocmd FileType python setlocal colorcolumn=82
+" autocmd FileType python setlocal colorcolumn=82   " python
+au BufRead,BufNewFile *.bf setlocal colorcolumn=82  " brainfuck
+au BufRead,BufNewFile *.s setlocal colorcolumn=82   " assembly
+highlight ColorColumn ctermbg=236
 
 " sets a specific highlight color as dark yellow
 syntax on
