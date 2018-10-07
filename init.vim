@@ -46,6 +46,9 @@ set clipboard^=unnamed,unnamedplus
 " https://stackoverflow.com/a/4468491
 command Bd bp|bd #
 
+" removes all trailing whitespace
+command RmTrail %s/\s\+\n/\r/g|noh
+
 " Sets the line ruler to 80 for better veritcal split viewing
 " autocmd FileType python setlocal colorcolumn=82   " python
 au BufRead,BufNewFile *.bf setlocal colorcolumn=82  " brainfuck
