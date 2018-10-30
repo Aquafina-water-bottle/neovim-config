@@ -40,6 +40,15 @@ set scrolloff=1
 " uses the system clipboard
 set clipboard^=unnamed,unnamedplus
 
+" highlights column & row of cursor
+" PROBLEM is that this highlighting take priority over pretty much everything
+" figure out a way where this highlighting is the lowest priority
+" highlight CursorColumn ctermbg=232
+" highlight CursorLine cterm=none ctermbg=232
+" set cursorline
+" set cursorcolumn
+
+
 " Sets this to delete the current buffer WITHOUT deleting the window
 " this is useful when working with multiple tabs since tabs are a collection
 " of windows
