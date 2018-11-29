@@ -62,6 +62,7 @@ command RmTrail %s/\s\+\n/\r/g|noh
 " autocmd FileType python setlocal colorcolumn=82   " python
 au BufRead,BufNewFile *.bf setlocal colorcolumn=82  " brainfuck
 au BufRead,BufNewFile *.s setlocal colorcolumn=82   " assembly
+au BufRead,BufNewFile *.tex setlocal colorcolumn=82   " assembly
 highlight ColorColumn ctermbg=236
 
 " sets a specific highlight color as dark yellow
@@ -143,6 +144,13 @@ let g:gitgutter_sign_modified_removed   = '▀'
 " Note that this does NOT work using linux subsystem for windows
 " although it works in ubuntu 18.04
 Plug 'iamcco/markdown-preview.vim'
+
+" Trying to do shit with latex
+" the following requires a `pip3 install neovim-remote`
+" according to https://github.com/lervag/vimtex/wiki/introduction#neovim
+Plug 'lervag/vimtex'
+let g:vimtex_compiler_progname = 'nvr'
+let g:vimtex_view_method = 'mupdf'
 
 " Initialize plugin system
 call plug#end()
