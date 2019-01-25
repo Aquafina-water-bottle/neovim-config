@@ -62,7 +62,15 @@ command RmTrail %s/\s\+\n/\r/g|noh
 " autocmd FileType python setlocal colorcolumn=82   " python
 au BufRead,BufNewFile *.bf setlocal colorcolumn=82  " brainfuck
 au BufRead,BufNewFile *.s setlocal colorcolumn=82   " assembly
-au BufRead,BufNewFile *.tex setlocal colorcolumn=82   " assembly
+au BufRead,BufNewFile *.tex setlocal colorcolumn=82 " latex
+
+" Sets tab spaces to 2
+au BufRead,BufNewFile *.js setlocal tabstop=2       " javascript
+au BufRead,BufNewFile *.js setlocal shiftwidth=2
+au BufRead,BufNewFile *.css setlocal tabstop=2
+au BufRead,BufNewFile *.css setlocal shiftwidth=2
+au BufRead,BufNewFile *.html setlocal tabstop=2
+au BufRead,BufNewFile *.html setlocal shiftwidth=2
 highlight ColorColumn ctermbg=236
 
 " sets a specific highlight color as dark yellow
