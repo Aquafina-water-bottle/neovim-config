@@ -87,6 +87,10 @@ hi Folded ctermfg=252
 
 " Sets all .fena files to use the config syntax highlighting
 au BufRead,BufNewFile *.fena setfiletype conf
+" Sets all .tzs (toonzscript) files to use javascript (ecmastandard)
+" highlighting (note it's syntax because the linter doesn't like the
+" predefined classes / functions toonzscript has)
+au BufRead,BufNewFile *.tzs set syntax=javascript
 
 " specifically a folding method for the 'Random.txt' file
 autocmd BufRead,BufNewFile ~/pgc/prog/Other/notes/Random.txt set foldmethod=marker foldmarker=//<,//>
