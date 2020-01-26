@@ -93,8 +93,8 @@ au BufRead,BufNewFile *.fena setfiletype conf
 au BufRead,BufNewFile *.tzs set syntax=javascript
 
 " specifically a folding method for the 'Random.txt' file
-autocmd BufRead,BufNewFile ~/pgc/prog/Other/notes/Random.txt set foldmethod=marker foldmarker=//<,//>
-autocmd BufRead,BufNewFile /mnt/c/Users/Austin\-zs/Documents/Austin/powder\ game\ code/Programming/Other/notes/Random.txt set foldmethod=marker foldmarker=//<,//>
+autocmd BufRead,BufNewFile ~/pgc/prog/other/notes/Random.txt set foldmethod=marker foldmarker=//<,//>
+autocmd BufRead,BufNewFile /mnt/c/Users/Austin\-zs/Documents/Austin/powder\ game\ code/Programming/other/notes/Random.txt set foldmethod=marker foldmarker=//<,//>
 
 
 " using vim-plug
@@ -165,6 +165,11 @@ Plug 'iamcco/markdown-preview.vim'
 Plug 'lervag/vimtex'
 let g:vimtex_compiler_progname = 'nvr'
 let g:vimtex_view_method = 'mupdf'
+
+" plantuml stuff
+Plug 'https://github.com/weirongxu/plantuml-previewer.vim.git'
+Plug 'https://github.com/aklt/plantuml-syntax.git'
+Plug 'https://github.com/tyru/open-browser.vim.git'
 
 " Initialize plugin system
 call plug#end()
