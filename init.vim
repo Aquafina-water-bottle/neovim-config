@@ -93,7 +93,7 @@ au BufRead,BufNewFile *.fena setfiletype conf
 au BufRead,BufNewFile *.tzs set syntax=javascript
 
 " specifically a folding method for the 'Random.txt' file
-autocmd BufRead,BufNewFile ~/pgc/prog/other/notes/Random.txt set foldmethod=marker foldmarker=//<,//>
+autocmd BufRead,BufNewFile ~/pgc/other/notes/notes.txt set foldmethod=marker foldmarker=//<,//>
 autocmd BufRead,BufNewFile /mnt/c/Users/Austin\-zs/Documents/Austin/powder\ game\ code/Programming/other/notes/Random.txt set foldmethod=marker foldmarker=//<,//>
 
 
