@@ -98,7 +98,7 @@ au BufRead,BufNewFile *.tzs set syntax=javascript
 
 " specifically a folding method for the 'notes.txt' file
 autocmd BufRead,BufNewFile ~/pgc/other/notes/notes.txt set foldmethod=marker foldmarker=//<,//>
-autocmd BufRead,BufNewFile /mnt/c/Users/Austin\-zs/Documents/Austin/powder\ game\ code/Programming/other/notes/notes.txt set foldmethod=marker foldmarker=//<,//>
+autocmd BufRead,BufNewFile /mnt/c/Users/Austin\-zs/Documents/Austin/powder\ game\ code/Programming/Other/notes/notes.txt set foldmethod=marker foldmarker=//<,//>
 
 
 " using vim-plug
