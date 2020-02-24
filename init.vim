@@ -73,6 +73,10 @@ au BufRead,BufNewFile *.scm setlocal tabstop=2      " scheme
 au BufRead,BufNewFile *.scm setlocal shiftwidth=2
 au BufRead,BufNewFile *.html setlocal tabstop=2
 au BufRead,BufNewFile *.html setlocal shiftwidth=2
+
+" sets gdscript files to use tab spaces ;-;
+au BufRead,BufNewFile *.gd setlocal noexpandtab
+
 highlight ColorColumn ctermbg=236
 
 " sets a specific highlight color as dark yellow
@@ -92,9 +96,9 @@ au BufRead,BufNewFile *.fena setfiletype conf
 " predefined classes / functions toonzscript has)
 au BufRead,BufNewFile *.tzs set syntax=javascript
 
-" specifically a folding method for the 'Random.txt' file
+" specifically a folding method for the 'notes.txt' file
 autocmd BufRead,BufNewFile ~/pgc/other/notes/notes.txt set foldmethod=marker foldmarker=//<,//>
-autocmd BufRead,BufNewFile /mnt/c/Users/Austin\-zs/Documents/Austin/powder\ game\ code/Programming/other/notes/Random.txt set foldmethod=marker foldmarker=//<,//>
+autocmd BufRead,BufNewFile /mnt/c/Users/Austin\-zs/Documents/Austin/powder\ game\ code/Programming/other/notes/notes.txt set foldmethod=marker foldmarker=//<,//>
 
 
 " using vim-plug
