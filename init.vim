@@ -184,6 +184,9 @@ call plug#end()
 " nmap <silent> <leader>ak :ALEPrevious<cr>
 nmap <silent> <leader>aj <Plug>(ale_next_wrap)
 nmap <silent> <leader>ak <Plug>(ale_previous_wrap)
+" ALE changing error to undercurl
+highlight ALEError ctermbg=none cterm=undercurl
+highlight ALEWarning ctermbg=none cterm=undercurl
 
 " Markdown preview bindings
 nmap <silent> <F8> <Plug>MarkdownPreview
