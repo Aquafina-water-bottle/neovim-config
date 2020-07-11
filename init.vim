@@ -1,3 +1,6 @@
+" temp fix to normal colors?
+set background=light
+
 " setting all tab spaces to use 4 spaces instead of one \t
 " https://stackoverflow.com/a/234578
 filetype plugin indent on
@@ -97,7 +100,7 @@ au BufRead,BufNewFile *.fena setfiletype conf
 au BufRead,BufNewFile *.tzs set syntax=javascript
 
 " specifically a folding method for the 'notes.txt' file
-autocmd BufRead,BufNewFile ~/pgc/other/notes/notes.txt set foldmethod=marker foldmarker=//<,//>
+autocmd BufRead,BufNewFile /mnt/shared/other/notes/notes.txt set foldmethod=marker foldmarker=//<,//>
 autocmd BufRead,BufNewFile /mnt/c/Users/Austin\-zs/Documents/Austin/powder\ game\ code/Programming/Other/notes/notes.txt set foldmethod=marker foldmarker=//<,//>
 
 
@@ -158,6 +161,7 @@ let g:gitgutter_sign_removed            = '▄'
 let g:gitgutter_sign_removed_first_line = '▀'
 let g:gitgutter_sign_modified_removed   = '▀'
 
+highlight! link SignColumn LineNr
 highlight GitGutterAdd    guifg=#009900 ctermfg=2
 highlight GitGutterChange guifg=#bbbb00 ctermfg=3
 highlight GitGutterDelete guifg=#ff2222 ctermfg=1
