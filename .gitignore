@@ -1,1 +1,7 @@
 .netrwhist
+.ccls-cache/
+coc-settings.json
+ftdetect
+ftplugin
+indent
+syntax
