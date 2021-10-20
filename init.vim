@@ -2,7 +2,7 @@
 " - coc.vim -> ale
 " - look for debugging plugins
 
-" temp fix to normal colors?
+" fix to normal colors?
 set background=light
 
 " setting all tab spaces to use 4 spaces instead of one \t
@@ -156,6 +156,22 @@ let g:airline#extensions#tabline#buffer_nr_show = 1
 " Remove the showing of tabs to show buffers better
 let g:airline#extensions#tabline#show_tabs = 0
 
+" updates airline highlights properly
+function! s:update_highlights()
+  hi airline_tab ctermfg=242 ctermbg=236 guifg=#6a6a6a guibg=#303030
+endfunction
+autocmd User AirlineAfterTheme call s:update_highlights()
+
+if !exists('g:airline_symbols')
+let g:airline_symbols = {}
+endif
+
+" unicode symbols
+"let g:airline_symbols.colnr = ' ㏇:'
+let g:airline_symbols.colnr = ' ㏇'
+"let g:airline_symbols.colnr = ''
+let g:airline_symbols.maxlinenr = ''
+
 
 " Vim markdown highlighting once again
 Plug 'https://github.com/plasticboy/vim-markdown.git'
@@ -194,6 +210,20 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': 
 Plug 'lervag/vimtex'
 let g:vimtex_compiler_progname = 'nvr'
 let g:vimtex_view_method = 'mupdf'
+let g:vimtex_compiler_latexmk = {
+    \ 'build_dir' : '.ltsrc',
+    \}
+
+
+"let g:vimtex_compiler_latexmk = {
+"    \ 'options' : [
+"    \   '-verbose',
+"    \   '-file-line-error',
+"    \   '-synctex=1',
+"    \   '-interaction=nonstopmode',
+"    \   '--shell-escape'
+"    \ ]
+"    \}
 
 " plantuml stuff
 Plug 'https://github.com/weirongxu/plantuml-previewer.vim.git'
@@ -255,11 +285,6 @@ hi Pmenu ctermbg=236 ctermfg=231
 " Airline with coc.nvim
 let airline#extensions#coc#error_symbol = 'ERROR:'
 let airline#extensions#coc#warning_symbol = 'WARN:'
-
-
-" all of the following is copied/pasted from the script provided by coc.nvim
-" TextEdit might fail if hidden is not set.
-set hidden
 
 " Some servers have issues with backup files, see #649.
 set nobackup
@@ -326,10 +351,17 @@ Plug 'jackguo380/vim-lsp-cxx-highlight'
 " ctrl-p
 Plug 'https://github.com/ctrlpvim/ctrlp.vim.git'
 
+"\ 'dir':  '\v[\/]\.(git|hg|svn)$',
+"\ 'file': '\v\.(exe|so|dll|o|a)$',
 let g:ctrlp_custom_ignore = {
-    \ 'dir':  '\v[\/]\.(git|hg|svn)$',
-    \ 'file': '\v\.(exe|so|dll|o)$',
-    \ 'link': 'SOME_BAD_SYMBOLIC_LINKS',
+    \ 'dir':  '\v[\/]('
+    \   . '\.git|\.hg|\.svn|__pycache__'
+    \   . '|CMakeFiles|_deps'
+    \   . '|boost\/include|snpe-1\.51\.0\.2663|opencv-4\.1\.0|deepvision'
+    \   . '|build\/unittest|build\/tools'
+    \   . '|docs\/build\/doxygen'
+    \   . ')$',
+    \ 'file': '\v\.(exe|so|dll|o|a)$',
     \ }
 
 
@@ -339,6 +371,36 @@ let g:ctrlp_custom_ignore = {
 "let g:VM_maps['Find Under'] = '<C-g>'   " replace C-n
 
 
+" nerd tree (file tree viewer)
+Plug 'preservim/nerdtree'
+
+nnoremap <C-t> :NERDTreeToggle<CR> <C-w>=
+
+
+" ctrlsf.vim (async directory searcher)
+Plug 'dyng/ctrlsf.vim'
+
+nmap     <C-F>f <Plug>CtrlSFPrompt
+vmap     <C-F>f <Plug>CtrlSFVwordPath
+vmap     <C-F>F <Plug>CtrlSFVwordExec
+nmap     <C-F>n <Plug>CtrlSFCwordPath
+nmap     <C-F>p <Plug>CtrlSFPwordPath
+nnoremap <C-F>o :CtrlSFOpen<CR>
+nnoremap <C-F>t :CtrlSFToggle<CR>
+inoremap <C-F>t <Esc>:CtrlSFToggle<CR>
+
+hi ctrlsfMatch ctermbg=75
+
+
+" nix vim highlighting
+Plug 'LnL7/vim-nix'
+
+" ibus compatability with vim
+"Plug 'kevinhwang91/vim-ibus-sw'
+" fcitx 5 compatability with vim
+"Plug 'lilydjwg/fcitx.vim'
+" fcitx <= 5 compatability with vim
+Plug 'vim-scripts/fcitx.vim'
 
 " Initialize plugin system
 call plug#end()
