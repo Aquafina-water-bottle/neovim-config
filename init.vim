@@ -360,6 +360,8 @@ let g:ctrlp_custom_ignore = {
     \   . '|boost\/include|snpe-1\.51\.0\.2663|opencv-4\.1\.0|deepvision'
     \   . '|build\/unittest|build\/tools'
     \   . '|docs\/build\/doxygen'
+    \   . '|build'
+    \   . '|__pycache__'
     \   . ')$',
     \ 'file': '\v\.(exe|so|dll|o|a)$',
     \ }
@@ -401,6 +403,17 @@ Plug 'LnL7/vim-nix'
 "Plug 'lilydjwg/fcitx.vim'
 " fcitx <= 5 compatability with vim
 Plug 'vim-scripts/fcitx.vim'
+
+" rst support
+"Plug 'Rykka/riv.vim'
+"Plug 'Rykka/InstantRst'
+Plug 'previm/previm'
+"let g:previm_open_cmd = 'open -a Firefox'
+let g:previm_custom_css_path = './jp/style.css'
+"Plug 'tyru/open-browser.vim'
+"if (expand('%:p') == '/mnt/shared/other/notes/jp/jp.rst')
+"    let g:previm_custom_css_path = './jp/style.css'
+"endif
 
 " Initialize plugin system
 call plug#end()
